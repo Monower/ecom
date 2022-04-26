@@ -1,1 +1,1 @@
-<h3>Footer page</h3>
+<h3 style="padding-top: 100px">Footer page</h3>
