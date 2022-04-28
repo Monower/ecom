@@ -1,9 +1,7 @@
 @extends('master')
 @section('content')
-    
 
-
-<div class="container custom-product">
+<div class="custom-product">
 
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -15,8 +13,9 @@
             @foreach ($product as $p)
                 @if ($p['id']<4)
                   <div class="carousel-item {{$p['id']==1?'active':''}}">
-                    <img src="{{$p['gallery']}}" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
+                    <a href="detail/{{$p['id']}}">
+                    <img class="slider-img" src="{{$p['gallery']}}" class="d-block w-100"></a>
+                    <div class="carousel-caption d-none d-md-block slider-text">
                        <h5>{{$p['name']}}</h5>
                         <p>{{$p['description']}}</p>
                    </div>
@@ -32,6 +31,20 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
+      </div>
+
+      <div class="trending-wrapper">
+        <h3>Trending Products</h3>
+        <div class="trending-item">
+          @foreach($product as $p)
+                  <img class="trending-img" src="{{$p['gallery']}}" class="d-block w-100">
+                  <div class="">
+                     <h5>{{$p['name']}}</h5>                    
+                 </div>
+               </div>
+          @endforeach
+      </div>
+
       </div>
 
 </div>
