@@ -22,7 +22,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="/myorders">Orders</a>
           </li>
 
         </ul>
@@ -31,7 +31,7 @@
           <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Cart({{$total}})</a></li>
+            <li><a href="/cartlist">Cart({{$total}})</a></li>
             @if (Session::has('user'))
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{Session::get('user')['name']}}</a>
@@ -42,6 +42,7 @@
 
             @else
                 <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
             @endif
 
         </ul>

@@ -30,3 +30,17 @@ Route::get('/logout',function(){
     Session::forget('user');
     return redirect('login');
 });
+
+Route::get('cartlist',[ProductController::class,'cartlist']);
+
+Route::get('removecart/{id}',[ProductController::class,'remove_cart_item']);
+
+Route::get('ordernow',[ProductController::class,'ordernow']);
+
+Route::post('orderplace',[ProductController::class,'order_place']);
+
+Route::get('myorders',[ProductController::class,'myorders']);
+
+Route::view('register','register');
+
+Route::post('/register',[UserController::class,'register']);
